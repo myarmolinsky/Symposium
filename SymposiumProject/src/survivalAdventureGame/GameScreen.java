@@ -36,7 +36,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 						+ "There will be many challenges throughout your time surviving,"
 						+ "but know that they will get harder and harder the longer you progress."
 						+ "Your actions in response to events are only part of what determines your fate,"
-						+ "there is also some random chance involved, so just keep that in mind."
+						+ "there is also some random chance involved, so just keep that in mind. "
 						+ "Without further ado, you may begin surviving!");
 		gameStarter = new Button(300, 200, 200, 50, "Start Game", Color.GREEN, new Action() {
 			public void act() {

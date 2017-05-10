@@ -18,6 +18,24 @@ public class GameScreen extends ClickableScreen implements Runnable {
 	private TextArea intro;
 	private Button exitIntro;
 	private TextArea text;
+	private Button flashlight;
+	private Button survivalKnife;
+	private Button matchBox;
+	private Button rag;
+	private Button medKit;
+	private Button gps;
+	private Button friend;
+	private Button waterBottle;
+	private boolean flashlightTaken;
+	private boolean survivalKnifeTaken;
+	private boolean matchBoxTaken;
+	private boolean ragTaken;
+	private boolean medKitTaken;
+	private boolean gpsTaken;
+	private boolean friendTaken;
+	private boolean waterBottleTaken;
+	private TextLabel chosenItems;
+	private Button submitChosenItems;
 
 	public GameScreen(int width, int height) {
 		super(width, height);
@@ -50,10 +68,129 @@ public class GameScreen extends ClickableScreen implements Runnable {
 						remove(intro);
 						remove(exitIntro);
 						text = new TextArea(50, 100, 700, 300, "Your story begins here. "
-								+ "You were camping and foolishly forgot to put out the fire before going to sleep and the fire ended up lighting your camp ablaze. "
+								+ "You were camping with your friend "
+								+ "and foolishly forgot to put out the fire before going to sleep "
+								+ "and the fire ended up lighting your camp ablaze. "
 								+ "You wake up in the nick of time to grab a few of your things and get out alive. "
 								+ "Choose three items to take with you to aid in your journey to get back to civilization.");
 						addObject(text);
+						chosenItems = new TextLabel(0, 0, 0, 0, returnChosenItems());
+						flashlight = new Button(0, 0, 0, 0, "Flashlight", Color.YELLOW, new Action() {
+
+							public void act() {
+								if (!flashlightTaken) {
+									flashlightTaken = true;
+								} else {
+									flashlightTaken = false;
+								}
+							}
+
+						});
+						survivalKnife = new Button(0, 0, 0, 0, "Survival Knife", Color.YELLOW, new Action() {
+
+							public void act() {
+								if (!survivalKnifeTaken) {
+									survivalKnifeTaken = true;
+								} else {
+									survivalKnifeTaken = false;
+								}
+							}
+
+						});
+						matchBox = new Button(0, 0, 0, 0, "Match Box", Color.YELLOW, new Action() {
+
+							public void act() {
+								if (!matchBoxTaken) {
+									matchBoxTaken = true;
+								} else {
+									matchBoxTaken = false;
+								}
+							}
+
+						});
+						rag = new Button(0, 0, 0, 0, "Rag", Color.YELLOW, new Action() {
+
+							public void act() {
+								if (!ragTaken) {
+									ragTaken = true;
+								} else {
+									ragTaken = false;
+								}
+							}
+
+						});
+						medKit = new Button(0, 0, 0, 0, "Med Kit", Color.YELLOW, new Action() {
+
+							public void act() {
+								if (!medKitTaken) {
+									medKitTaken = true;
+								} else {
+									medKitTaken = false;
+								}
+							}
+
+						});
+						gps = new Button(0, 0, 0, 0, "GPS", Color.YELLOW, new Action() {
+
+							public void act() {
+								if (!gpsTaken) {
+									gpsTaken = true;
+								} else {
+									gpsTaken = false;
+								}
+							}
+
+						});
+						friend = new Button(0, 0, 0, 0, "Friend", Color.YELLOW, new Action() {
+
+							public void act() {
+								if (!friendTaken) {
+									friendTaken = true;
+								} else {
+									friendTaken = false;
+								}
+							}
+
+						});
+						waterBottle = new Button(0, 0, 0, 0, "Water Bottle", Color.YELLOW, new Action() {
+
+							public void act() {
+								if (!waterBottleTaken) {
+									waterBottleTaken = true;
+								} else {
+									waterBottleTaken = false;
+								}
+							}
+
+						});
+						submitChosenItems = new Button(0, 0, 0, 0, "Submit", Color.BLUE, new Action() {
+
+							public void act() {
+								if(checkChosenItems()){
+									remove(flashlight);
+									remove(survivalKnife);
+									remove(matchBox);
+									remove(rag);
+									remove(medKit);
+									remove(gps);
+									remove(friend);
+									remove(waterBottle);
+									remove(chosenItems);
+									remove(submitChosenItems);
+								}
+							}
+
+						});
+						addObject(flashlight);
+						addObject(survivalKnife);
+						addObject(matchBox);
+						addObject(rag);
+						addObject(medKit);
+						addObject(gps);
+						addObject(friend);
+						addObject(waterBottle);
+						addObject(chosenItems);
+						addObject(submitChosenItems);
 					}
 
 				});
@@ -65,5 +202,68 @@ public class GameScreen extends ClickableScreen implements Runnable {
 		viewObjects.add(author);
 		viewObjects.add(gameStarter);
 	}
+	
+	public boolean checkChosenItems() {
+		int takens = 0;
+		if(flashlightTaken){
+			takens++;
+		}
+		if(survivalKnifeTaken){
+			takens++;
+		}
+		if(matchBoxTaken){
+			takens++;
+		}
+		if(ragTaken){
+			takens++;
+		}
+		if(medKitTaken){
+			takens++;
+		}
+		if(gpsTaken){
+			takens++;
+		}
+		if(friendTaken){
+			takens++;
+		}
+		if(waterBottleTaken){
+			takens++;
+		}
+		if(takens == 3){
+			return true;
+		}
+		return false;
+	}
+	
+	public String returnChosenItems() {
+		String chosenItemsString = "Inventory:  ";
+		if(flashlightTaken){
+			chosenItemsString+= "Flashlight, ";
+		}
+		if(survivalKnifeTaken){
+			chosenItemsString+= "Survival Knife, ";
+		}
+		if(matchBoxTaken){
+			chosenItemsString+= "Match Box, ";
+		}
+		if(ragTaken){
+			chosenItemsString+= "Rag, ";
+		}
+		if(medKitTaken){
+			chosenItemsString+= "Med kit, ";
+		}
+		if(gpsTaken){
+			chosenItemsString+= "GPS, ";
+		}
+		if(friendTaken){
+			chosenItemsString+= "Friend, ";
+		}
+		if(waterBottleTaken){
+			chosenItemsString+= "Water Bottle, ";
+		}
+		System.out.println(chosenItemsString.substring(0, chosenItemsString.length() - 2));
+		return chosenItemsString.substring(0, chosenItemsString.length() - 2);
+	}
+
 
 }

@@ -34,7 +34,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 	private boolean gpsTaken;
 	private boolean friendTaken;
 	private boolean waterBottleTaken;
-	private TextLabel chosenItems;
+	private TextArea chosenItems;
 	private Button submitChosenItems;
 
 	public GameScreen(int width, int height) {
@@ -74,7 +74,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 								+ "You wake up in the nick of time to grab a few of your things and get out alive. "
 								+ "Choose three items to take with you to aid in your journey to get back to civilization.");
 						addObject(text);
-						chosenItems = new TextLabel(0, 0, 0, 0, returnChosenItems());
+						chosenItems = new TextArea(50, 450, 100, 50, returnChosenItems());
 						flashlight = new Button(0, 0, 0, 0, "Flashlight", Color.YELLOW, new Action() {
 
 							public void act() {
@@ -261,7 +261,6 @@ public class GameScreen extends ClickableScreen implements Runnable {
 		if(waterBottleTaken){
 			chosenItemsString+= "Water Bottle, ";
 		}
-		System.out.println(chosenItemsString.substring(0, chosenItemsString.length() - 2));
 		return chosenItemsString.substring(0, chosenItemsString.length() - 2);
 	}
 

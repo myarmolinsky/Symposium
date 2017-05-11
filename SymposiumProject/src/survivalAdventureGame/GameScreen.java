@@ -75,7 +75,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 								+ "Choose three items to take with you to aid in your journey to get back to civilization.");
 						addObject(text);
 						chosenItems = new TextArea(50, 450, 100, 50, returnChosenItems());
-						flashlight = new Button(0, 0, 0, 0, "Flashlight", Color.YELLOW, new Action() {
+						flashlight = new Button(50, 425, 100, 50, "Flashlight", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!flashlightTaken) {
@@ -86,7 +86,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 							}
 
 						});
-						survivalKnife = new Button(0, 0, 0, 0, "Survival Knife", Color.YELLOW, new Action() {
+						survivalKnife = new Button(50, 425, 100, 50, "Survival Knife", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!survivalKnifeTaken) {
@@ -97,7 +97,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 							}
 
 						});
-						matchBox = new Button(0, 0, 0, 0, "Match Box", Color.YELLOW, new Action() {
+						matchBox = new Button(50, 425, 100, 50, "Match Box", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!matchBoxTaken) {
@@ -119,7 +119,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 							}
 
 						});
-						medKit = new Button(0, 0, 0, 0, "Med Kit", Color.YELLOW, new Action() {
+						medKit = new Button(50, 425, 100, 50, "Med Kit", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!medKitTaken) {
@@ -130,7 +130,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 							}
 
 						});
-						gps = new Button(0, 0, 0, 0, "GPS", Color.YELLOW, new Action() {
+						gps = new Button(50, 425, 100, 50, "GPS", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!gpsTaken) {
@@ -141,7 +141,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 							}
 
 						});
-						friend = new Button(0, 0, 0, 0, "Friend", Color.YELLOW, new Action() {
+						friend = new Button(50, 425, 100, 50, "Friend", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!friendTaken) {
@@ -152,7 +152,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 							}
 
 						});
-						waterBottle = new Button(0, 0, 0, 0, "Water Bottle", Color.YELLOW, new Action() {
+						waterBottle = new Button(50, 425, 100, 50, "Water Bottle", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!waterBottleTaken) {
@@ -163,7 +163,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 							}
 
 						});
-						submitChosenItems = new Button(0, 0, 0, 0, "Submit", Color.BLUE, new Action() {
+						submitChosenItems = new Button(50, 425, 100, 50, "Submit", Color.BLUE, new Action() {
 
 							public void act() {
 								if(checkChosenItems()){

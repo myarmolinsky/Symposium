@@ -108,7 +108,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 							}
 
 						});
-						rag = new Button(0, 0, 0, 0, "Rag", Color.YELLOW, new Action() {
+						rag = new Button(50, 425, 100, 50, "Rag", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!ragTaken) {
@@ -163,7 +163,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 							}
 
 						});
-						submitChosenItems = new Button(50, 425, 100, 50, "Submit", Color.BLUE, new Action() {
+						submitChosenItems = new Button(50, 425, 100, 50, "Submit", Color.CYAN, new Action() {
 
 							public void act() {
 								if(checkChosenItems()){

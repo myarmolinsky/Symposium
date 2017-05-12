@@ -67,106 +67,138 @@ public class GameScreen extends ClickableScreen implements Runnable {
 					public void act() {
 						remove(intro);
 						remove(exitIntro);
-						text = new TextArea(50, 100, 700, 300, "Your story begins here. "
+						text = new TextArea(50, 50, 700, 300, "Your story begins here. "
 								+ "You were camping with your friend "
 								+ "and foolishly forgot to put out the fire before going to sleep "
 								+ "and the fire ended up lighting your camp ablaze. "
 								+ "You wake up in the nick of time to grab a few of your things and get out alive. "
 								+ "Choose three items to take with you to aid in your journey to get back to civilization.");
 						addObject(text);
-						chosenItems = new TextArea(50, 450, 100, 50, returnChosenItems());
-						flashlight = new Button(50, 425, 100, 50, "Flashlight", Color.YELLOW, new Action() {
+						chosenItems = new TextArea(50, 250, 750, 200, returnChosenItems());
+						flashlight = new Button(50, 350, 150, 50, "Flashlight", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!flashlightTaken) {
 									flashlightTaken = true;
+									flashlight.setColor(Color.GREEN);
+									chosenItems.setText(returnChosenItems());
 								} else {
 									flashlightTaken = false;
+									flashlight.setColor(Color.YELLOW);
+									chosenItems.setText(returnChosenItems());
 								}
 							}
 
 						});
-						survivalKnife = new Button(50, 425, 100, 50, "Survival Knife", Color.YELLOW, new Action() {
+						survivalKnife = new Button(200, 350, 150, 50, "Survival Knife", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!survivalKnifeTaken) {
 									survivalKnifeTaken = true;
+									survivalKnife.setColor(Color.GREEN);
+									chosenItems.setText(returnChosenItems());
 								} else {
 									survivalKnifeTaken = false;
+									survivalKnife.setColor(Color.YELLOW);
+									chosenItems.setText(returnChosenItems());
 								}
 							}
 
 						});
-						matchBox = new Button(50, 425, 100, 50, "Match Box", Color.YELLOW, new Action() {
+						matchBox = new Button(350, 350, 150, 50, "Match Box", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!matchBoxTaken) {
 									matchBoxTaken = true;
+									matchBox.setColor(Color.GREEN);
+									chosenItems.setText(returnChosenItems());
 								} else {
 									matchBoxTaken = false;
+									matchBox.setColor(Color.YELLOW);
+									chosenItems.setText(returnChosenItems());
 								}
 							}
 
 						});
-						rag = new Button(50, 425, 100, 50, "Rag", Color.YELLOW, new Action() {
+						rag = new Button(500, 350, 150, 50, "Rag", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!ragTaken) {
 									ragTaken = true;
+									rag.setColor(Color.GREEN);
+									chosenItems.setText(returnChosenItems());
 								} else {
 									ragTaken = false;
+									rag.setColor(Color.YELLOW);
+									chosenItems.setText(returnChosenItems());
 								}
 							}
 
 						});
-						medKit = new Button(50, 425, 100, 50, "Med Kit", Color.YELLOW, new Action() {
+						medKit = new Button(50, 425, 150, 50, "Med Kit", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!medKitTaken) {
 									medKitTaken = true;
+									medKit.setColor(Color.GREEN);
+									chosenItems.setText(returnChosenItems());
 								} else {
 									medKitTaken = false;
+									medKit.setColor(Color.YELLOW);
+									chosenItems.setText(returnChosenItems());
 								}
 							}
 
 						});
-						gps = new Button(50, 425, 100, 50, "GPS", Color.YELLOW, new Action() {
+						gps = new Button(200, 425, 150, 50, "GPS", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!gpsTaken) {
 									gpsTaken = true;
+									gps.setColor(Color.GREEN);
+									chosenItems.setText(returnChosenItems());
 								} else {
 									gpsTaken = false;
+									gps.setColor(Color.YELLOW);
+									chosenItems.setText(returnChosenItems());
 								}
 							}
 
 						});
-						friend = new Button(50, 425, 100, 50, "Friend", Color.YELLOW, new Action() {
+						friend = new Button(350, 425, 150, 50, "Friend", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!friendTaken) {
 									friendTaken = true;
+									friend.setColor(Color.GREEN);
+									chosenItems.setText(returnChosenItems());
 								} else {
 									friendTaken = false;
+									friend.setColor(Color.YELLOW);
+									chosenItems.setText(returnChosenItems());
 								}
 							}
 
 						});
-						waterBottle = new Button(50, 425, 100, 50, "Water Bottle", Color.YELLOW, new Action() {
+						waterBottle = new Button(500, 425, 150, 50, "Water Bottle", Color.YELLOW, new Action() {
 
 							public void act() {
 								if (!waterBottleTaken) {
 									waterBottleTaken = true;
+									waterBottle.setColor(Color.GREEN);
+									chosenItems.setText(returnChosenItems());
 								} else {
 									waterBottleTaken = false;
+									waterBottle.setColor(Color.YELLOW);
+									chosenItems.setText(returnChosenItems());
 								}
 							}
 
 						});
-						submitChosenItems = new Button(50, 425, 100, 50, "Submit", Color.CYAN, new Action() {
+						submitChosenItems = new Button(675, 425, 100, 50, "Submit", Color.CYAN, new Action() {
 
 							public void act() {
-								if(checkChosenItems()){
+								if (checkChosenItems()) {
 									remove(flashlight);
 									remove(survivalKnife);
 									remove(matchBox);
@@ -175,7 +207,6 @@ public class GameScreen extends ClickableScreen implements Runnable {
 									remove(gps);
 									remove(friend);
 									remove(waterBottle);
-									remove(chosenItems);
 									remove(submitChosenItems);
 								}
 							}
@@ -202,67 +233,66 @@ public class GameScreen extends ClickableScreen implements Runnable {
 		viewObjects.add(author);
 		viewObjects.add(gameStarter);
 	}
-	
+
 	public boolean checkChosenItems() {
 		int takens = 0;
-		if(flashlightTaken){
+		if (flashlightTaken) {
 			takens++;
 		}
-		if(survivalKnifeTaken){
+		if (survivalKnifeTaken) {
 			takens++;
 		}
-		if(matchBoxTaken){
+		if (matchBoxTaken) {
 			takens++;
 		}
-		if(ragTaken){
+		if (ragTaken) {
 			takens++;
 		}
-		if(medKitTaken){
+		if (medKitTaken) {
 			takens++;
 		}
-		if(gpsTaken){
+		if (gpsTaken) {
 			takens++;
 		}
-		if(friendTaken){
+		if (friendTaken) {
 			takens++;
 		}
-		if(waterBottleTaken){
+		if (waterBottleTaken) {
 			takens++;
 		}
-		if(takens == 3){
+		if (takens == 3) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	public String returnChosenItems() {
 		String chosenItemsString = "Inventory:  ";
-		if(flashlightTaken){
-			chosenItemsString+= "Flashlight, ";
+		if (flashlightTaken) {
+			chosenItemsString += "Flashlight, ";
 		}
-		if(survivalKnifeTaken){
-			chosenItemsString+= "Survival Knife, ";
+		if (survivalKnifeTaken) {
+			chosenItemsString += "Survival Knife, ";
 		}
-		if(matchBoxTaken){
-			chosenItemsString+= "Match Box, ";
+		if (matchBoxTaken) {
+			chosenItemsString += "Match Box, ";
 		}
-		if(ragTaken){
-			chosenItemsString+= "Rag, ";
+		if (ragTaken) {
+			chosenItemsString += "Rag, ";
 		}
-		if(medKitTaken){
-			chosenItemsString+= "Med kit, ";
+		if (medKitTaken) {
+			chosenItemsString += "Med kit, ";
 		}
-		if(gpsTaken){
-			chosenItemsString+= "GPS, ";
+		if (gpsTaken) {
+			chosenItemsString += "GPS, ";
 		}
-		if(friendTaken){
-			chosenItemsString+= "Friend, ";
+		if (friendTaken) {
+			chosenItemsString += "Friend, ";
 		}
-		if(waterBottleTaken){
-			chosenItemsString+= "Water Bottle, ";
+		if (waterBottleTaken) {
+			chosenItemsString += "Water Bottle, ";
 		}
 		return chosenItemsString.substring(0, chosenItemsString.length() - 2);
 	}
-
 
 }

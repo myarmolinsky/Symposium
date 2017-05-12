@@ -36,6 +36,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 	private boolean waterBottleTaken;
 	private TextArea chosenItems;
 	private Button submitChosenItems;
+	private int turnCounter;
 
 	public GameScreen(int width, int height) {
 		super(width, height);
@@ -207,6 +208,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 									remove(gps);
 									remove(friend);
 									remove(waterBottle);
+									text.setText(chooseEvent());
 									remove(submitChosenItems);
 								}
 							}
@@ -293,6 +295,40 @@ public class GameScreen extends ClickableScreen implements Runnable {
 			chosenItemsString += "Water Bottle, ";
 		}
 		return chosenItemsString.substring(0, chosenItemsString.length() - 2);
+	}
+	
+	public String chooseEvent() {
+		String chosenEvent = "";
+		String[] events = new String[24];
+		events[0] = "A Bear Attacks";
+		events[1] = "You've reached a clearing";
+		events[2] = "You see smoke in the distance";
+		events[3] = "You found animal tracks, but you don't ";
+		events[4] = "";
+		events[5] = "";
+		events[6] = "";
+		events[7] = "";
+		events[8] = "";
+		events[9] = "";
+		events[10] = "";
+		events[11] = "";
+		events[12] = "";
+		events[13] = "";
+		events[14] = "";
+		events[15] = "";
+		events[16] = "";
+		events[17] = "";
+		events[18] = "";
+		events[19] = "";
+		events[20] = "";
+		events[21] = "";
+		events[22] = "";
+		events[23] = "";
+		if(turnCounter < 25){
+			chosenEvent = events[(int)(Math.random() * events.length)];
+			turnCounter ++;
+		}
+		return chosenEvent + ", what do you do?";
 	}
 
 }

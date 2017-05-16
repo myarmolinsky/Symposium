@@ -37,6 +37,11 @@ public class GameScreen extends ClickableScreen implements Runnable {
 	private TextArea chosenItems;
 	private Button submitChosenItems;
 	private int turnCounter;
+	private Button bearEncounter1;
+	private Button bearEncounter2;
+	private Button bearEncounter3;
+	private Button bearEncounter4;
+	private Button bearEncounter5;
 
 	public GameScreen(int width, int height) {
 		super(width, height);
@@ -208,7 +213,11 @@ public class GameScreen extends ClickableScreen implements Runnable {
 									remove(gps);
 									remove(friend);
 									remove(waterBottle);
-									text.setText(chooseEvent());
+									String chosenEvent = chooseEvent();
+									text.setText(chosenEvent);
+									if (chosenEvent.equals("A Bear attacks, what do you do?")){
+										
+									}
 									remove(submitChosenItems);
 								}
 							}
@@ -300,31 +309,17 @@ public class GameScreen extends ClickableScreen implements Runnable {
 	public String chooseEvent() {
 		String chosenEvent = "";
 		String[] events = new String[24];
-		events[0] = "A Bear Attacks";
+		events[0] = "A Bear attacks";
 		events[1] = "You've reached a clearing";
 		events[2] = "You see smoke in the distance";
-		events[3] = "You found animal tracks, but you don't ";
-		events[4] = "";
-		events[5] = "";
-		events[6] = "";
-		events[7] = "";
-		events[8] = "";
-		events[9] = "";
-		events[10] = "";
-		events[11] = "";
-		events[12] = "";
-		events[13] = "";
-		events[14] = "";
-		events[15] = "";
-		events[16] = "";
-		events[17] = "";
-		events[18] = "";
-		events[19] = "";
-		events[20] = "";
-		events[21] = "";
-		events[22] = "";
-		events[23] = "";
-		if(turnCounter < 25){
+		events[3] = "You found animal tracks, but you don't know which animal they belong to";
+		events[4] = "You walk into a bee hive";
+		events[5] = "You walk onto a trail";
+		events[6] = "You walk up to a river";
+		events[7] = "You walk up to a lake";
+		events[8] = "You up to a bear bed";
+		events[9] = "You walk up to a cave";
+		if(turnCounter < 50){
 			chosenEvent = events[(int)(Math.random() * events.length)];
 			turnCounter ++;
 		}

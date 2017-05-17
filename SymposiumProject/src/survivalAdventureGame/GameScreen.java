@@ -37,11 +37,10 @@ public class GameScreen extends ClickableScreen implements Runnable {
 	private TextArea chosenItems;
 	private Button submitChosenItems;
 	private int turnCounter;
+	private Button defaultButton;
 	private Button bearEncounter1;
 	private Button bearEncounter2;
 	private Button bearEncounter3;
-	private Button bearEncounter4;
-	private Button bearEncounter5;
 
 	public GameScreen(int width, int height) {
 		super(width, height);
@@ -213,11 +212,78 @@ public class GameScreen extends ClickableScreen implements Runnable {
 									remove(gps);
 									remove(friend);
 									remove(waterBottle);
+									defaultButton = new Button(500, 425, 150, 50, "Die", Color.RED, new Action() {
+
+										public void act() {
+											
+										}
+
+									});
 									String chosenEvent = chooseEvent();
 									text.setText(chosenEvent);
-									if (chosenEvent.equals("A Bear attacks, what do you do?")){
+									while(turnCounter < 51){
 										
 									}
+//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
+//										addObject(bearEncounter1);
+//										addObject(bearEncounter2);
+//										addObject(bearEncounter3);
+//										addObject(defaultButton);
+//									}
+//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
+//										addObject(bearEncounter1);
+//										addObject(bearEncounter2);
+//										addObject(bearEncounter3);
+//										addObject(defaultButton);
+//									}
+//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
+//										addObject(bearEncounter1);
+//										addObject(bearEncounter2);
+//										addObject(bearEncounter3);
+//										addObject(defaultButton);
+//									}
+//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
+//										addObject(bearEncounter1);
+//										addObject(bearEncounter2);
+//										addObject(bearEncounter3);
+//										addObject(defaultButton);
+//									}
+//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
+//										addObject(bearEncounter1);
+//										addObject(bearEncounter2);
+//										addObject(bearEncounter3);
+//										addObject(defaultButton);
+//									}
+//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
+//										addObject(bearEncounter1);
+//										addObject(bearEncounter2);
+//										addObject(bearEncounter3);
+//										addObject(defaultButton);
+//									}
+//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
+//										addObject(bearEncounter1);
+//										addObject(bearEncounter2);
+//										addObject(bearEncounter3);
+//										addObject(defaultButton);
+//									}
+//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
+//										addObject(bearEncounter1);
+//										addObject(bearEncounter2);
+//										addObject(bearEncounter3);
+//										addObject(defaultButton);
+//									}
+//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
+//										addObject(bearEncounter1);
+//										addObject(bearEncounter2);
+//										addObject(bearEncounter3);
+//										addObject(defaultButton);
+//									}
+//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
+//										addObject(bearEncounter1);
+//										addObject(bearEncounter2);
+//										addObject(bearEncounter3);
+//										addObject(defaultButton);
+//									}
 									remove(submitChosenItems);
 								}
 							}
@@ -308,7 +374,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 	
 	public String chooseEvent() {
 		String chosenEvent = "";
-		String[] events = new String[24];
+		String[] events = new String[10];
 		events[0] = "A Bear attacks";
 		events[1] = "You've reached a clearing";
 		events[2] = "You see smoke in the distance";

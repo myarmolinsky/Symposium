@@ -36,11 +36,47 @@ public class GameScreen extends ClickableScreen implements Runnable {
 	private boolean waterBottleTaken;
 	private TextArea chosenItems;
 	private Button submitChosenItems;
+	private String[] events;// = String{"A Bear attacks", "You've reached a
+							// clearing", "You see smoke in the distance", "You
+							// found animal tracks, but you don't know which
+							// animal they belong to", "You walk into a bee
+							// hive", "You walk onto a trail", "You walk up to a
+							// river", "You walk up to a lake", "You up to a
+							// bear bed", "You walk up to a cave"};
 	private int turnCounter;
 	private Button defaultButton;
+	private TextLabel gameover;
+	private Button[][] optionButtons;
 	private Button bearEncounter1;
 	private Button bearEncounter2;
 	private Button bearEncounter3;
+	private Button clearingEncounter1;
+	private Button clearingEncounter2;
+	private Button clearingEncounter3;
+	private Button smokeEncounter1;
+	private Button smokeEncounter2;
+	private Button smokeEncounter3;
+	private Button tracksEncounter1;
+	private Button tracksEncounter2;
+	private Button tracksEncounter3;
+	private Button beeEncounter1;
+	private Button beeEncounter2;
+	private Button beeEncounter3;
+	private Button trailEncounter1;
+	private Button trailEncounter2;
+	private Button trailEncounter3;
+	private Button riverEncounter1;
+	private Button riverEncounter2;
+	private Button riverEncounter3;
+	private Button lakeEncounter1;
+	private Button lakeEncounter2;
+	private Button lakeEncounter3;
+	private Button corpseEncounter1;
+	private Button corpseEncounter2;
+	private Button corpseEncounter3;
+	private Button caveEncounter1;
+	private Button caveEncounter2;
+	private Button caveEncounter3;
 
 	public GameScreen(int width, int height) {
 		super(width, height);
@@ -51,6 +87,193 @@ public class GameScreen extends ClickableScreen implements Runnable {
 	}
 
 	public void initAllObjects(ArrayList<Visible> viewObjects) {
+		String[] setTo = { "A Bear attacks", "You've reached a clearing", "You see smoke in the distance",
+				"You found animal tracks, but you don't know which animal they belong to", "You walk into a bee hive",
+				"You walk onto a trail", "You walk up to a river", "You walk up to a lake", "You up to a corpse",
+				"You walk up to a cave" };
+		events = setTo;
+		Button[][] buttons = { { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+
+			public void act() {
+
+			}
+
+		}) } };
+		optionButtons = buttons;
 		title = new TextLabel(300, 100, 200, 50, "Survival Adventure");
 		author = new TextLabel(300, 150, 250, 50, "By Matthew Yarmolinsky");
 		intro = new TextArea(50, 100, 700, 300,
@@ -215,68 +438,101 @@ public class GameScreen extends ClickableScreen implements Runnable {
 									defaultButton = new Button(500, 425, 150, 50, "Die", Color.RED, new Action() {
 
 										public void act() {
-
+											gameover = new TextLabel(400, 250, 100, 100, "Game Over");
+											viewObjects.add(gameover);
+											viewObjects.remove(text);
+											viewObjects.remove(defaultButton);
+											viewObjects.remove(bearEncounter1);
+											viewObjects.remove(bearEncounter2);
+											viewObjects.remove(bearEncounter3);
+											viewObjects.remove(clearingEncounter1);
+											viewObjects.remove(clearingEncounter2);
+											viewObjects.remove(clearingEncounter3);
+											viewObjects.remove(smokeEncounter1);
+											viewObjects.remove(smokeEncounter2);
+											viewObjects.remove(smokeEncounter3);
+											viewObjects.remove(tracksEncounter1);
+											viewObjects.remove(tracksEncounter2);
+											viewObjects.remove(tracksEncounter3);
+											viewObjects.remove(beeEncounter1);
+											viewObjects.remove(beeEncounter2);
+											viewObjects.remove(beeEncounter3);
+											viewObjects.remove(trailEncounter1);
+											viewObjects.remove(trailEncounter2);
+											viewObjects.remove(trailEncounter3);
+											viewObjects.remove(riverEncounter1);
+											viewObjects.remove(riverEncounter2);
+											viewObjects.remove(riverEncounter3);
+											viewObjects.remove(lakeEncounter1);
+											viewObjects.remove(lakeEncounter2);
+											viewObjects.remove(lakeEncounter3);
+											viewObjects.remove(corpseEncounter1);
+											viewObjects.remove(corpseEncounter2);
+											viewObjects.remove(corpseEncounter3);
+											viewObjects.remove(caveEncounter1);
+											viewObjects.remove(caveEncounter2);
+											viewObjects.remove(caveEncounter3);
 										}
 
 									});
 									while (turnCounter < 51) {
 										String chosenEvent = chooseEvent();
 										text.setText(chosenEvent);
-										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+										if (chosenEvent.equals(events[0])) {
 											addObject(bearEncounter1);
 											addObject(bearEncounter2);
 											addObject(bearEncounter3);
 											addObject(defaultButton);
 										}
-										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+										if (chosenEvent.equals(events[1])) {
 											addObject(bearEncounter1);
 											addObject(bearEncounter2);
 											addObject(bearEncounter3);
 											addObject(defaultButton);
 										}
-										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+										if (chosenEvent.equals(events[2])) {
 											addObject(bearEncounter1);
 											addObject(bearEncounter2);
 											addObject(bearEncounter3);
 											addObject(defaultButton);
 										}
-										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+										if (chosenEvent.equals(events[3])) {
 											addObject(bearEncounter1);
 											addObject(bearEncounter2);
 											addObject(bearEncounter3);
 											addObject(defaultButton);
 										}
-										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+										if (chosenEvent.equals(events[4])) {
 											addObject(bearEncounter1);
 											addObject(bearEncounter2);
 											addObject(bearEncounter3);
 											addObject(defaultButton);
 										}
-										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+										if (chosenEvent.equals(events[5])) {
 											addObject(bearEncounter1);
 											addObject(bearEncounter2);
 											addObject(bearEncounter3);
 											addObject(defaultButton);
 										}
-										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+										if (chosenEvent.equals(events[6])) {
 											addObject(bearEncounter1);
 											addObject(bearEncounter2);
 											addObject(bearEncounter3);
 											addObject(defaultButton);
 										}
-										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+										if (chosenEvent.equals(events[7])) {
 											addObject(bearEncounter1);
 											addObject(bearEncounter2);
 											addObject(bearEncounter3);
 											addObject(defaultButton);
 										}
-										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+										if (chosenEvent.equals(events[8])) {
 											addObject(bearEncounter1);
 											addObject(bearEncounter2);
 											addObject(bearEncounter3);
 											addObject(defaultButton);
 										}
-										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+										if (chosenEvent.equals(events[9])) {
 											addObject(bearEncounter1);
 											addObject(bearEncounter2);
 											addObject(bearEncounter3);
@@ -373,17 +629,6 @@ public class GameScreen extends ClickableScreen implements Runnable {
 
 	public String chooseEvent() {
 		String chosenEvent = "";
-		String[] events = new String[10];
-		events[0] = "A Bear attacks";
-		events[1] = "You've reached a clearing";
-		events[2] = "You see smoke in the distance";
-		events[3] = "You found animal tracks, but you don't know which animal they belong to";
-		events[4] = "You walk into a bee hive";
-		events[5] = "You walk onto a trail";
-		events[6] = "You walk up to a river";
-		events[7] = "You walk up to a lake";
-		events[8] = "You up to a bear bed";
-		events[9] = "You walk up to a cave";
 		if (turnCounter < 50) {
 			chosenEvent = events[(int) (Math.random() * events.length)];
 			turnCounter++;

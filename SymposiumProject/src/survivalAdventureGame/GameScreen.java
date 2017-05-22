@@ -47,36 +47,6 @@ public class GameScreen extends ClickableScreen implements Runnable {
 	private Button defaultButton;
 	private TextLabel gameover;
 	private Button[][] optionButtons;
-	private Button bearEncounter1;
-	private Button bearEncounter2;
-	private Button bearEncounter3;
-	private Button clearingEncounter1;
-	private Button clearingEncounter2;
-	private Button clearingEncounter3;
-	private Button smokeEncounter1;
-	private Button smokeEncounter2;
-	private Button smokeEncounter3;
-	private Button tracksEncounter1;
-	private Button tracksEncounter2;
-	private Button tracksEncounter3;
-	private Button beeEncounter1;
-	private Button beeEncounter2;
-	private Button beeEncounter3;
-	private Button trailEncounter1;
-	private Button trailEncounter2;
-	private Button trailEncounter3;
-	private Button riverEncounter1;
-	private Button riverEncounter2;
-	private Button riverEncounter3;
-	private Button lakeEncounter1;
-	private Button lakeEncounter2;
-	private Button lakeEncounter3;
-	private Button corpseEncounter1;
-	private Button corpseEncounter2;
-	private Button corpseEncounter3;
-	private Button caveEncounter1;
-	private Button caveEncounter2;
-	private Button caveEncounter3;
 
 	public GameScreen(int width, int height) {
 		super(width, height);
@@ -442,102 +412,13 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											viewObjects.add(gameover);
 											viewObjects.remove(text);
 											viewObjects.remove(defaultButton);
-											viewObjects.remove(bearEncounter1);
-											viewObjects.remove(bearEncounter2);
-											viewObjects.remove(bearEncounter3);
-											viewObjects.remove(clearingEncounter1);
-											viewObjects.remove(clearingEncounter2);
-											viewObjects.remove(clearingEncounter3);
-											viewObjects.remove(smokeEncounter1);
-											viewObjects.remove(smokeEncounter2);
-											viewObjects.remove(smokeEncounter3);
-											viewObjects.remove(tracksEncounter1);
-											viewObjects.remove(tracksEncounter2);
-											viewObjects.remove(tracksEncounter3);
-											viewObjects.remove(beeEncounter1);
-											viewObjects.remove(beeEncounter2);
-											viewObjects.remove(beeEncounter3);
-											viewObjects.remove(trailEncounter1);
-											viewObjects.remove(trailEncounter2);
-											viewObjects.remove(trailEncounter3);
-											viewObjects.remove(riverEncounter1);
-											viewObjects.remove(riverEncounter2);
-											viewObjects.remove(riverEncounter3);
-											viewObjects.remove(lakeEncounter1);
-											viewObjects.remove(lakeEncounter2);
-											viewObjects.remove(lakeEncounter3);
-											viewObjects.remove(corpseEncounter1);
-											viewObjects.remove(corpseEncounter2);
-											viewObjects.remove(corpseEncounter3);
-											viewObjects.remove(caveEncounter1);
-											viewObjects.remove(caveEncounter2);
-											viewObjects.remove(caveEncounter3);
 										}
 
 									});
+									addObject(defaultButton);
 									while (turnCounter < 51) {
 										String chosenEvent = chooseEvent();
 										text.setText(chosenEvent);
-										if (chosenEvent.equals(events[0])) {
-											addObject(bearEncounter1);
-											addObject(bearEncounter2);
-											addObject(bearEncounter3);
-											addObject(defaultButton);
-										}
-										if (chosenEvent.equals(events[1])) {
-											addObject(bearEncounter1);
-											addObject(bearEncounter2);
-											addObject(bearEncounter3);
-											addObject(defaultButton);
-										}
-										if (chosenEvent.equals(events[2])) {
-											addObject(bearEncounter1);
-											addObject(bearEncounter2);
-											addObject(bearEncounter3);
-											addObject(defaultButton);
-										}
-										if (chosenEvent.equals(events[3])) {
-											addObject(bearEncounter1);
-											addObject(bearEncounter2);
-											addObject(bearEncounter3);
-											addObject(defaultButton);
-										}
-										if (chosenEvent.equals(events[4])) {
-											addObject(bearEncounter1);
-											addObject(bearEncounter2);
-											addObject(bearEncounter3);
-											addObject(defaultButton);
-										}
-										if (chosenEvent.equals(events[5])) {
-											addObject(bearEncounter1);
-											addObject(bearEncounter2);
-											addObject(bearEncounter3);
-											addObject(defaultButton);
-										}
-										if (chosenEvent.equals(events[6])) {
-											addObject(bearEncounter1);
-											addObject(bearEncounter2);
-											addObject(bearEncounter3);
-											addObject(defaultButton);
-										}
-										if (chosenEvent.equals(events[7])) {
-											addObject(bearEncounter1);
-											addObject(bearEncounter2);
-											addObject(bearEncounter3);
-											addObject(defaultButton);
-										}
-										if (chosenEvent.equals(events[8])) {
-											addObject(bearEncounter1);
-											addObject(bearEncounter2);
-											addObject(bearEncounter3);
-											addObject(defaultButton);
-										}
-										if (chosenEvent.equals(events[9])) {
-											addObject(bearEncounter1);
-											addObject(bearEncounter2);
-											addObject(bearEncounter3);
-											addObject(defaultButton);
-										}
 										remove(submitChosenItems);
 									}
 								}

@@ -215,76 +215,75 @@ public class GameScreen extends ClickableScreen implements Runnable {
 									defaultButton = new Button(500, 425, 150, 50, "Die", Color.RED, new Action() {
 
 										public void act() {
-											
+
 										}
 
 									});
-									String chosenEvent = chooseEvent();
-									text.setText(chosenEvent);
-									while(turnCounter < 51){
-										
+									while (turnCounter < 51) {
+										String chosenEvent = chooseEvent();
+										text.setText(chosenEvent);
+										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+											addObject(bearEncounter1);
+											addObject(bearEncounter2);
+											addObject(bearEncounter3);
+											addObject(defaultButton);
+										}
+										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+											addObject(bearEncounter1);
+											addObject(bearEncounter2);
+											addObject(bearEncounter3);
+											addObject(defaultButton);
+										}
+										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+											addObject(bearEncounter1);
+											addObject(bearEncounter2);
+											addObject(bearEncounter3);
+											addObject(defaultButton);
+										}
+										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+											addObject(bearEncounter1);
+											addObject(bearEncounter2);
+											addObject(bearEncounter3);
+											addObject(defaultButton);
+										}
+										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+											addObject(bearEncounter1);
+											addObject(bearEncounter2);
+											addObject(bearEncounter3);
+											addObject(defaultButton);
+										}
+										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+											addObject(bearEncounter1);
+											addObject(bearEncounter2);
+											addObject(bearEncounter3);
+											addObject(defaultButton);
+										}
+										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+											addObject(bearEncounter1);
+											addObject(bearEncounter2);
+											addObject(bearEncounter3);
+											addObject(defaultButton);
+										}
+										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+											addObject(bearEncounter1);
+											addObject(bearEncounter2);
+											addObject(bearEncounter3);
+											addObject(defaultButton);
+										}
+										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+											addObject(bearEncounter1);
+											addObject(bearEncounter2);
+											addObject(bearEncounter3);
+											addObject(defaultButton);
+										}
+										if (chosenEvent.equals("A Bear attacks, what do you do?")) {
+											addObject(bearEncounter1);
+											addObject(bearEncounter2);
+											addObject(bearEncounter3);
+											addObject(defaultButton);
+										}
+										remove(submitChosenItems);
 									}
-//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
-//										addObject(bearEncounter1);
-//										addObject(bearEncounter2);
-//										addObject(bearEncounter3);
-//										addObject(defaultButton);
-//									}
-//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
-//										addObject(bearEncounter1);
-//										addObject(bearEncounter2);
-//										addObject(bearEncounter3);
-//										addObject(defaultButton);
-//									}
-//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
-//										addObject(bearEncounter1);
-//										addObject(bearEncounter2);
-//										addObject(bearEncounter3);
-//										addObject(defaultButton);
-//									}
-//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
-//										addObject(bearEncounter1);
-//										addObject(bearEncounter2);
-//										addObject(bearEncounter3);
-//										addObject(defaultButton);
-//									}
-//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
-//										addObject(bearEncounter1);
-//										addObject(bearEncounter2);
-//										addObject(bearEncounter3);
-//										addObject(defaultButton);
-//									}
-//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
-//										addObject(bearEncounter1);
-//										addObject(bearEncounter2);
-//										addObject(bearEncounter3);
-//										addObject(defaultButton);
-//									}
-//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
-//										addObject(bearEncounter1);
-//										addObject(bearEncounter2);
-//										addObject(bearEncounter3);
-//										addObject(defaultButton);
-//									}
-//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
-//										addObject(bearEncounter1);
-//										addObject(bearEncounter2);
-//										addObject(bearEncounter3);
-//										addObject(defaultButton);
-//									}
-//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
-//										addObject(bearEncounter1);
-//										addObject(bearEncounter2);
-//										addObject(bearEncounter3);
-//										addObject(defaultButton);
-//									}
-//									if (chosenEvent.equals("A Bear attacks, what do you do?")){
-//										addObject(bearEncounter1);
-//										addObject(bearEncounter2);
-//										addObject(bearEncounter3);
-//										addObject(defaultButton);
-//									}
-									remove(submitChosenItems);
 								}
 							}
 
@@ -371,7 +370,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 		}
 		return chosenItemsString.substring(0, chosenItemsString.length() - 2);
 	}
-	
+
 	public String chooseEvent() {
 		String chosenEvent = "";
 		String[] events = new String[10];
@@ -385,9 +384,9 @@ public class GameScreen extends ClickableScreen implements Runnable {
 		events[7] = "You walk up to a lake";
 		events[8] = "You up to a bear bed";
 		events[9] = "You walk up to a cave";
-		if(turnCounter < 50){
-			chosenEvent = events[(int)(Math.random() * events.length)];
-			turnCounter ++;
+		if (turnCounter < 50) {
+			chosenEvent = events[(int) (Math.random() * events.length)];
+			turnCounter++;
 		}
 		return chosenEvent + ", what do you do?";
 	}

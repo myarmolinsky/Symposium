@@ -416,10 +416,18 @@ public class GameScreen extends ClickableScreen implements Runnable {
 
 									});
 									addObject(defaultButton);
+									remove(submitChosenItems);
 									while (turnCounter < 51) {
 										String chosenEvent = chooseEvent();
 										text.setText(chosenEvent);
-										remove(submitChosenItems);
+										for (int x = 0; x < events.length; x++) {
+											if (text.getText().equals(events[x])) {
+												addObject(optionButtons[x][0]);
+												addObject(optionButtons[x][1]);
+												addObject(optionButtons[x][2]);
+											}
+										}
+										turnCounter++;// fix
 									}
 								}
 							}
@@ -510,11 +518,14 @@ public class GameScreen extends ClickableScreen implements Runnable {
 
 	public String chooseEvent() {
 		String chosenEvent = "";
-		if (turnCounter < 50) {
+		if (turnCounter < 51) {
 			chosenEvent = events[(int) (Math.random() * events.length)];
 			turnCounter++;
+			chosenEvent += ", what do you do?";
+			return chosenEvent;
+		} else {
+			return "You made it to safety!";
 		}
-		return chosenEvent + ", what do you do?";
 	}
 
 }

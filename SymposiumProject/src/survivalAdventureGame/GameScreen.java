@@ -47,6 +47,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 	private Button defaultButton;
 	private TextLabel gameover;
 	private Button[][] optionButtons;
+	private int health = 100;
+	private int progress;
 
 	public GameScreen(int width, int height) {
 		super(width, height);
@@ -62,151 +64,151 @@ public class GameScreen extends ClickableScreen implements Runnable {
 				"You walk onto a trail", "You walk up to a river", "You walk up to a lake", "You up to a corpse",
 				"You walk up to a cave" };
 		events = setTo;
-		Button[][] buttons = { { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+		Button[][] buttons = { { new Button(400, 250, 100, 100, "Fight Back", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Run Away", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Play Dead", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+		}) }, { new Button(400, 250, 100, 100, "Rest", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Keep Walking", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Drink/Eat", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+		}) }, { new Button(400, 250, 100, 100, "Go To It", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Go Away From It", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Keep Going In The Direction You Were Going", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+		}) }, { new Button(400, 250, 100, 100, "Follow The Tracks", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Go Away From The Tracks", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Keep Going In The Direction You Were Going", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+		}) }, { new Button(400, 250, 100, 100, "Stand Still", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Slowly Walk Away", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Run Away", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+		}) }, { new Button(400, 250, 100, 100, "Follow The Trail Right", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Follow The Trail Left", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Keep Going In The Direction You Were Going", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+		}) }, { new Button(400, 250, 100, 100, "Fill Up On/Drink Water", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Follow The River Upstream", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Follow The River Downstream", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+		}) }, { new Button(400, 250, 100, 100, "Fill Up On/Drink Water", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option2", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Swim Through The Lake To Get To The Other Side", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}), new Button(400, 250, 100, 100, "option3", Color.CYAN, new Action() {
+		}), new Button(400, 250, 100, 100, "Walk Around The Lake To Get To The Other Side", Color.CYAN, new Action() {
 
 			public void act() {
 
 			}
 
-		}) }, { new Button(400, 250, 100, 100, "option1", Color.CYAN, new Action() {
+		}) }, { new Button(400, 250, 100, 100, "Loot Corpse", Color.CYAN, new Action() {
 
 			public void act() {
 
@@ -247,7 +249,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 		title = new TextLabel(300, 100, 200, 50, "Survival Adventure");
 		author = new TextLabel(300, 150, 250, 50, "By Matthew Yarmolinsky");
 		intro = new TextArea(50, 100, 700, 300,
-				"Welcome to the Introduction/Tutorial." + "This is a text- and image-based survival adventure."
+				"Welcome to the Introduction/Tutorial." + "This is a text-based survival adventure."
 						+ "Your goal is to survive as long as possible."
 						+ "There will be many challenges throughout your time surviving,"
 						+ "but know that they will get harder and harder the longer you progress."
@@ -427,8 +429,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												addObject(optionButtons[x][2]);
 											}
 										}
-										turnCounter++;// fix
 									}
+									remove(defaultButton);
 								}
 							}
 

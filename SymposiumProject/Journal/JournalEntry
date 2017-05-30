@@ -126,7 +126,6 @@ For Tomorrow:
 -Continue to set up events and the such
 -Set up event classes and set up turn-event looping
 
-
 5/25/17
 Goal(s) for today:
 -Continue to set up events and the such
@@ -137,3 +136,10 @@ For Tomorrow:
 -Continue to set up events and the such
 -Set up event classes and set up turn-event looping
 -Set up progress and health bars
+
+5/30/17
+My goals for today were to finish setting up the choice buttons for the events that would occur throughout my game.
+I couldn't get them appearing because of a mistake I made in my code earlier when making my string array of events.
+After helping me fix that, Mr. Nockles showed me a simpler approach than the one I was going to take to continue with my code.
+Created the new options buttons.
+Started to set up the setting of buttons' texts and actions.

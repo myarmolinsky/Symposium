@@ -9,6 +9,7 @@ import gui.components.TextArea;
 import gui.components.TextLabel;
 import gui.components.Visible;
 import gui.screens.ClickableScreen;
+import survivalButtons.ChoiceButton;
 
 public class GameScreen extends ClickableScreen implements Runnable {
 
@@ -46,46 +47,39 @@ public class GameScreen extends ClickableScreen implements Runnable {
 	private int turnCounter;
 	private Button defaultButton;
 	private TextLabel gameover;
-	private Button bear1;
-	private Button bear2;
-	private Button bear3;
-	private boolean bear;
-	private Button clearing1;
-	private Button clearing2;
-	private Button clearing3;
-	private boolean clearing;
-	private Button smoke1;
-	private Button smoke2;
-	private Button smoke3;
-	private boolean smoke;
-	private Button tracks1;
-	private Button tracks2;
-	private Button tracks3;
-	private boolean tracks;
-	private Button bee1;
-	private Button bee2;
-	private Button bee3;
-	private boolean bee;
-	private Button trail1;
-	private Button trail2;
-	private Button trail3;
-	private boolean trail;
-	private Button river1;
-	private Button river2;
-	private Button river3;
-	private boolean river;
-	private Button lake1;
-	private Button lake2;
-	private Button lake3;
-	private boolean lake;
-	private Button corpse1;
-	private Button corpse2;
-	private Button corpse3;
-	private boolean corpse;
-	private Button cave1;
-	private Button cave2;
-	private Button cave3;
-	private boolean cave;
+	// private Button bear1;
+	// private Button bear2;
+	// private Button bear3;
+	// private Button clearing1;
+	// private Button clearing2;
+	// private Button clearing3;
+	// private Button smoke1;
+	// private Button smoke2;
+	// private Button smoke3;
+	// private Button tracks1;
+	// private Button tracks2;
+	// private Button tracks3;
+	// private Button bee1;
+	// private Button bee2;
+	// private Button bee3;
+	// private Button trail1;
+	// private Button trail2;
+	// private Button trail3;
+	// private Button river1;
+	// private Button river2;
+	// private Button river3;
+	// private Button lake1;
+	// private Button lake2;
+	// private Button lake3;
+	// private Button corpse1;
+	// private Button corpse2;
+	// private Button corpse3;
+	// private Button cave1;
+	// private Button cave2;
+	// private Button cave3;
+	private ChoiceButton option1;
+	private ChoiceButton option2;
+	private ChoiceButton option3;
 	private int health = 100;
 	private int progress;
 
@@ -103,219 +97,268 @@ public class GameScreen extends ClickableScreen implements Runnable {
 				"You walk onto a trail", "You walk up to a river", "You walk up to a lake", "You up to a corpse",
 				"You walk up to a cave" };
 		events = setTo;
-		bear1 = new Button(400, 250, 100, 100, "Fight Back", Color.CYAN, new Action() {
+		option1 = new ChoiceButton(0, "", new Action() {
 
 			public void act() {
 
 			}
 
 		});
-		bear2 = new Button(400, 250, 100, 100, "Run Away", Color.CYAN, new Action() {
+		option3 = new ChoiceButton(1, "", new Action() {
 
 			public void act() {
 
 			}
 
 		});
-		bear3 = new Button(400, 250, 100, 100, "Play Dead", Color.CYAN, new Action() {
+		option3 = new ChoiceButton(2, "", new Action() {
 
 			public void act() {
 
 			}
 
 		});
-		clearing1 = new Button(400, 250, 100, 100, "Rest", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		clearing2 = new Button(400, 250, 100, 100, "Keep Walking", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		clearing3 = new Button(400, 250, 100, 100, "Drink/Eat", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		smoke1 = new Button(400, 250, 100, 100, "Go To It", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		smoke2 = new Button(400, 250, 100, 100, "Go Away From It", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		smoke3 = new Button(400, 250, 100, 100, "Keep Going In The Direction You Were Going", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		tracks1 = new Button(400, 250, 100, 100, "Follow The Tracks", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		tracks2 = new Button(400, 250, 100, 100, "Go Away From The Tracks", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		tracks3 = new Button(400, 250, 100, 100, "Keep Going In The Direction You Were Going", Color.CYAN,
-				new Action() {
-
-					public void act() {
-
-					}
-
-				});
-		bee1 = new Button(400, 250, 100, 100, "Stand Still", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		bee2 = new Button(400, 250, 100, 100, "Slowly Walk Away", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		bee3 = new Button(400, 250, 100, 100, "Run Away", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		trail1 = new Button(400, 250, 100, 100, "Follow The Trail Right", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		trail2 = new Button(400, 250, 100, 100, "Follow The Trail Left", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		trail3 = new Button(400, 250, 100, 100, "Keep Going In The Direction You Were Going", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		river1 = new Button(400, 250, 100, 100, "Fill Up On/Drink Water", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		river2 = new Button(400, 250, 100, 100, "Follow The River Upstream", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		river3 = new Button(400, 250, 100, 100, "Follow The River Downstream", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		lake1 = new Button(400, 250, 100, 100, "Fill Up On/Drink Water", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		lake2 = new Button(400, 250, 100, 100, "Swim Through The Lake To Get To The Other Side", Color.CYAN,
-				new Action() {
-
-					public void act() {
-
-					}
-
-				});
-		lake3 = new Button(400, 250, 100, 100, "Walk Around The Lake To Get To The Other Side", Color.CYAN,
-				new Action() {
-
-					public void act() {
-
-					}
-
-				});
-		corpse1 = new Button(400, 250, 100, 100, "Loot Corpse", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		corpse2 = new Button(400, 250, 100, 100, "Ignore The Corpse", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		corpse3 = new Button(400, 250, 100, 100, "Call Out", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		cave1 = new Button(400, 250, 100, 100, "Go Into Cave And Rest", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		cave2 = new Button(400, 250, 100, 100, "Ignore The Cave", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
-		cave3 = new Button(400, 250, 100, 100, "Call Out", Color.CYAN, new Action() {
-
-			public void act() {
-
-			}
-
-		});
+		// bear1 = new ChoiceButton(0, "Fight Back",new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// bear2 = new ChoiceButton(1, "Run Away", new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// bear3 = new Button(400, 250, 100, 100, "Play Dead", Color.CYAN, new
+		// Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// clearing1 = new Button(400, 250, 100, 100, "Rest", Color.CYAN, new
+		// Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// clearing2 = new Button(400, 250, 100, 100, "Keep Walking",
+		// Color.CYAN, new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// clearing3 = new Button(400, 250, 100, 100, "Drink/Eat", Color.CYAN,
+		// new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// smoke1 = new Button(400, 250, 100, 100, "Go To It", Color.CYAN, new
+		// Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// smoke2 = new Button(400, 250, 100, 100, "Go Away From It",
+		// Color.CYAN, new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// smoke3 = new Button(400, 250, 100, 100, "Keep Going In The Direction
+		// You Were Going", Color.CYAN, new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// tracks1 = new Button(400, 250, 100, 100, "Follow The Tracks",
+		// Color.CYAN, new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// tracks2 = new Button(400, 250, 100, 100, "Go Away From The Tracks",
+		// Color.CYAN, new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// tracks3 = new Button(400, 250, 100, 100, "Keep Going In The Direction
+		// You Were Going", Color.CYAN,
+		// new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// bee1 = new Button(400, 250, 100, 100, "Stand Still", Color.CYAN, new
+		// Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// bee2 = new Button(400, 250, 100, 100, "Slowly Walk Away", Color.CYAN,
+		// new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// bee3 = new Button(400, 250, 100, 100, "Run Away", Color.CYAN, new
+		// Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// trail1 = new Button(400, 250, 100, 100, "Follow The Trail Right",
+		// Color.CYAN, new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// trail2 = new Button(400, 250, 100, 100, "Follow The Trail Left",
+		// Color.CYAN, new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// trail3 = new Button(400, 250, 100, 100, "Keep Going In The Direction
+		// You Were Going", Color.CYAN, new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// river1 = new Button(400, 250, 100, 100, "Fill Up On/Drink Water",
+		// Color.CYAN, new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// river2 = new Button(400, 250, 100, 100, "Follow The River Upstream",
+		// Color.CYAN, new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// river3 = new Button(400, 250, 100, 100, "Follow The River
+		// Downstream", Color.CYAN, new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// lake1 = new Button(400, 250, 100, 100, "Fill Up On/Drink Water",
+		// Color.CYAN, new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// lake2 = new Button(400, 250, 100, 100, "Swim Through The Lake To Get
+		// To The Other Side", Color.CYAN,
+		// new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// lake3 = new Button(400, 250, 100, 100, "Walk Around The Lake To Get
+		// To The Other Side", Color.CYAN,
+		// new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// corpse1 = new Button(400, 250, 100, 100, "Loot Corpse", Color.CYAN,
+		// new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// corpse2 = new Button(400, 250, 100, 100, "Ignore The Corpse",
+		// Color.CYAN, new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// corpse3 = new Button(400, 250, 100, 100, "Call Out", Color.CYAN, new
+		// Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// cave1 = new Button(400, 250, 100, 100, "Go Into Cave And Rest",
+		// Color.CYAN, new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// cave2 = new Button(400, 250, 100, 100, "Ignore The Cave", Color.CYAN,
+		// new Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
+		// cave3 = new Button(400, 250, 100, 100, "Call Out", Color.CYAN, new
+		// Action() {
+		//
+		// public void act() {
+		//
+		// }
+		//
+		// });
 		title = new TextLabel(300, 100, 200, 50, "Survival Adventure");
 		author = new TextLabel(300, 150, 250, 50, "By Matthew Yarmolinsky");
 		intro = new TextArea(50, 100, 700, 300,
@@ -489,128 +532,271 @@ public class GameScreen extends ClickableScreen implements Runnable {
 									});
 									addObject(defaultButton);
 									remove(submitChosenItems);
+									addObject(option1);
+									addObject(option2);
+									addObject(option3);
 									while (turnCounter < 51) {
-										if (bear) {
-											bear = false;
-											remove(bear1);
-											remove(bear2);
-											remove(bear3);
-										}
-										if (clearing) {
-											clearing = false;
-											remove(clearing1);
-											remove(clearing2);
-											remove(clearing3);
-										}
-										if (smoke) {
-											smoke = false;
-											remove(smoke1);
-											remove(smoke2);
-											remove(smoke3);
-										}
-										if (tracks) {
-											tracks = false;
-											remove(tracks1);
-											remove(tracks2);
-											remove(tracks3);
-										}
-										if (bee) {
-											bee = false;
-											remove(bee1);
-											remove(bee2);
-											remove(bee3);
-										}
-										if (trail) {
-											trail = false;
-											remove(trail1);
-											remove(trail2);
-											remove(trail3);
-										}
-										if (river) {
-											river = false;
-											remove(river1);
-											remove(river2);
-											remove(river3);
-										}
-										if (lake) {
-											lake = false;
-											remove(lake1);
-											remove(lake2);
-											remove(lake3);
-										}
-										if (corpse) {
-											corpse = false;
-											remove(corpse1);
-											remove(corpse2);
-											remove(corpse3);
-										}
-										if (cave) {
-											cave = false;
-											remove(cave1);
-											remove(cave2);
-											remove(cave3);
-										}
 										String chosenEvent = chooseEvent();
 										text.setText(chosenEvent);
-										if (text.getText().equals(events[0])) {
-											bear = true;
-											addObject(bear1);
-											addObject(bear2);
-											addObject(bear3);
+										if (text.getText().contains(events[0])) {
+											option1.setText("Fight Back");
+											option1.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option2.setText("Run Away");
+											option2.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option3.setText("Play Dead");
+											option3.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
 										}
-										if (text.getText().equals(events[1])) {
-											clearing = true;
-											addObject(clearing1);
-											addObject(clearing2);
-											addObject(clearing3);
+										if (text.getText().contains(events[1])) {
+											option1.setText("Fight Back");
+											option1.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option2.setText("Run Away");
+											option2.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option3.setText("Play Dead");
+											option3.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
 										}
-										if (text.getText().equals(events[2])) {
-											smoke = true;
-											addObject(smoke1);
-											addObject(smoke2);
-											addObject(smoke3);
+										if (text.getText().contains(events[2])) {
+											option1.setText("Fight Back");
+											option1.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option2.setText("Run Away");
+											option2.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option3.setText("Play Dead");
+											option3.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
 										}
-										if (text.getText().equals(events[3])) {
-											tracks = true;
-											addObject(tracks1);
-											addObject(tracks2);
-											addObject(tracks3);
+										if (text.getText().contains(events[3])) {
+											option1.setText("Fight Back");
+											option1.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option2.setText("Run Away");
+											option2.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option3.setText("Play Dead");
+											option3.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
 										}
-										if (text.getText().equals(events[4])) {
-											bee = true;
-											addObject(bee1);
-											addObject(bee2);
-											addObject(bee3);
+										if (text.getText().contains(events[4])) {
+											option1.setText("Fight Back");
+											option1.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option2.setText("Run Away");
+											option2.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option3.setText("Play Dead");
+											option3.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
 										}
-										if (text.getText().equals(events[5])) {
-											trail = true;
-											addObject(trail1);
-											addObject(trail2);
-											addObject(trail3);
+										if (text.getText().contains(events[5])) {
+											option1.setText("Fight Back");
+											option1.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option2.setText("Run Away");
+											option2.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option3.setText("Play Dead");
+											option3.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
 										}
-										if (text.getText().equals(events[6])) {
-											river = true;
-											addObject(river1);
-											addObject(river2);
-											addObject(river3);
+										if (text.getText().contains(events[6])) {
+											option1.setText("Fight Back");
+											option1.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option2.setText("Run Away");
+											option2.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option3.setText("Play Dead");
+											option3.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
 										}
-										if (text.getText().equals(events[7])) {
-											lake = true;
-											addObject(lake1);
-											addObject(lake2);
-											addObject(lake3);
+										if (text.getText().contains(events[7])) {
+											option1.setText("Fight Back");
+											option1.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option2.setText("Run Away");
+											option2.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option3.setText("Play Dead");
+											option3.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
 										}
-										if (text.getText().equals(events[8])) {
-											corpse = true;
-											addObject(corpse1);
-											addObject(corpse2);
-											addObject(corpse3);
+										if (text.getText().contains(events[8])) {
+											option1.setText("Fight Back");
+											option1.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option2.setText("Run Away");
+											option2.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option3.setText("Play Dead");
+											option3.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
 										}
-										if (text.getText().equals(events[9])) {
-											cave = true;
-											addObject(cave1);
-											addObject(cave2);
-											addObject(cave3);
+										if (text.getText().contains(events[9])) {
+											option1.setText("Fight Back");
+											option1.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option2.setText("Run Away");
+											option2.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
+											option3.setText("Play Dead");
+											option3.setAction(new Action() {
+
+												public void act() {
+
+												}
+
+											});
 										}
 									}
 									remove(defaultButton);

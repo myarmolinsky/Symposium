@@ -118,247 +118,6 @@ public class GameScreen extends ClickableScreen implements Runnable {
 			}
 
 		});
-		// bear1 = new ChoiceButton(0, "Fight Back",new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// bear2 = new ChoiceButton(1, "Run Away", new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// bear3 = new Button(400, 250, 100, 100, "Play Dead", Color.CYAN, new
-		// Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// clearing1 = new Button(400, 250, 100, 100, "Rest", Color.CYAN, new
-		// Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// clearing2 = new Button(400, 250, 100, 100, "Keep Walking",
-		// Color.CYAN, new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// clearing3 = new Button(400, 250, 100, 100, "Drink/Eat", Color.CYAN,
-		// new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// smoke1 = new Button(400, 250, 100, 100, "Go To It", Color.CYAN, new
-		// Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// smoke2 = new Button(400, 250, 100, 100, "Go Away From It",
-		// Color.CYAN, new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// smoke3 = new Button(400, 250, 100, 100, "Keep Going In The Direction
-		// You Were Going", Color.CYAN, new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// tracks1 = new Button(400, 250, 100, 100, "Follow The Tracks",
-		// Color.CYAN, new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// tracks2 = new Button(400, 250, 100, 100, "Go Away From The Tracks",
-		// Color.CYAN, new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// tracks3 = new Button(400, 250, 100, 100, "Keep Going In The Direction
-		// You Were Going", Color.CYAN,
-		// new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// bee1 = new Button(400, 250, 100, 100, "Stand Still", Color.CYAN, new
-		// Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// bee2 = new Button(400, 250, 100, 100, "Slowly Walk Away", Color.CYAN,
-		// new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// bee3 = new Button(400, 250, 100, 100, "Run Away", Color.CYAN, new
-		// Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// trail1 = new Button(400, 250, 100, 100, "Follow The Trail Right",
-		// Color.CYAN, new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// trail2 = new Button(400, 250, 100, 100, "Follow The Trail Left",
-		// Color.CYAN, new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// trail3 = new Button(400, 250, 100, 100, "Keep Going In The Direction
-		// You Were Going", Color.CYAN, new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// river1 = new Button(400, 250, 100, 100, "Fill Up On/Drink Water",
-		// Color.CYAN, new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// river2 = new Button(400, 250, 100, 100, "Follow The River Upstream",
-		// Color.CYAN, new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// river3 = new Button(400, 250, 100, 100, "Follow The River
-		// Downstream", Color.CYAN, new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// lake1 = new Button(400, 250, 100, 100, "Fill Up On/Drink Water",
-		// Color.CYAN, new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// lake2 = new Button(400, 250, 100, 100, "Swim Through The Lake To Get
-		// To The Other Side", Color.CYAN,
-		// new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// lake3 = new Button(400, 250, 100, 100, "Walk Around The Lake To Get
-		// To The Other Side", Color.CYAN,
-		// new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// corpse1 = new Button(400, 250, 100, 100, "Loot Corpse", Color.CYAN,
-		// new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// corpse2 = new Button(400, 250, 100, 100, "Ignore The Corpse",
-		// Color.CYAN, new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// corpse3 = new Button(400, 250, 100, 100, "Call Out", Color.CYAN, new
-		// Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// cave1 = new Button(400, 250, 100, 100, "Go Into Cave And Rest",
-		// Color.CYAN, new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// cave2 = new Button(400, 250, 100, 100, "Ignore The Cave", Color.CYAN,
-		// new Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
-		// cave3 = new Button(400, 250, 100, 100, "Call Out", Color.CYAN, new
-		// Action() {
-		//
-		// public void act() {
-		//
-		// }
-		//
-		// });
 		title = new TextLabel(300, 100, 200, 50, "Survival Adventure");
 		author = new TextLabel(300, 150, 250, 50, "By Matthew Yarmolinsky");
 		intro = new TextArea(50, 100, 700, 300,
@@ -543,7 +302,15 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option1.setAction(new Action() {
 
 												public void act() {
-
+													if (survivalKnifeTaken) {
+														health -= 25;
+													} else {
+														progress -= 5;
+														health -= 50;
+														if (progress < 0) {
+															progress = 0;
+														}
+													}
 												}
 
 											});
@@ -565,7 +332,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											});
 										}
 										if (text.getText().contains(events[1])) {
-											option1.setText("Fight Back");
+											option1.setText("Rest");
 											option1.setAction(new Action() {
 
 												public void act() {
@@ -573,7 +340,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option2.setText("Run Away");
+											option2.setText("Keep Walking");
 											option2.setAction(new Action() {
 
 												public void act() {
@@ -581,7 +348,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option3.setText("Play Dead");
+											option3.setText("Drink/Eat");
 											option3.setAction(new Action() {
 
 												public void act() {
@@ -591,7 +358,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											});
 										}
 										if (text.getText().contains(events[2])) {
-											option1.setText("Fight Back");
+											option1.setText("Go To It");
 											option1.setAction(new Action() {
 
 												public void act() {
@@ -599,7 +366,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option2.setText("Run Away");
+											option2.setText("Go Away From It");
 											option2.setAction(new Action() {
 
 												public void act() {
@@ -607,7 +374,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option3.setText("Play Dead");
+											option3.setText("Keep Going");
 											option3.setAction(new Action() {
 
 												public void act() {
@@ -617,7 +384,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											});
 										}
 										if (text.getText().contains(events[3])) {
-											option1.setText("Fight Back");
+											option1.setText("Follow The Tracks");
 											option1.setAction(new Action() {
 
 												public void act() {
@@ -625,7 +392,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option2.setText("Run Away");
+											option2.setText("Go Away From Them");
 											option2.setAction(new Action() {
 
 												public void act() {
@@ -633,7 +400,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option3.setText("Play Dead");
+											option3.setText("Keep Going");
 											option3.setAction(new Action() {
 
 												public void act() {
@@ -643,7 +410,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											});
 										}
 										if (text.getText().contains(events[4])) {
-											option1.setText("Fight Back");
+											option1.setText("Stand Still");
 											option1.setAction(new Action() {
 
 												public void act() {
@@ -651,7 +418,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option2.setText("Run Away");
+											option2.setText("Slowly Walk Away");
 											option2.setAction(new Action() {
 
 												public void act() {
@@ -659,7 +426,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option3.setText("Play Dead");
+											option3.setText("Run Away");
 											option3.setAction(new Action() {
 
 												public void act() {
@@ -669,7 +436,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											});
 										}
 										if (text.getText().contains(events[5])) {
-											option1.setText("Fight Back");
+											option1.setText("Go Right");
 											option1.setAction(new Action() {
 
 												public void act() {
@@ -677,7 +444,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option2.setText("Run Away");
+											option2.setText("Go Left");
 											option2.setAction(new Action() {
 
 												public void act() {
@@ -685,7 +452,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option3.setText("Play Dead");
+											option3.setText("Keep Going");
 											option3.setAction(new Action() {
 
 												public void act() {
@@ -695,7 +462,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											});
 										}
 										if (text.getText().contains(events[6])) {
-											option1.setText("Fight Back");
+											option1.setText("Fill Up On/Drink Water");
 											option1.setAction(new Action() {
 
 												public void act() {
@@ -703,7 +470,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option2.setText("Run Away");
+											option2.setText("Follow The River Upstream");
 											option2.setAction(new Action() {
 
 												public void act() {
@@ -711,7 +478,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option3.setText("Play Dead");
+											option3.setText("Follow The River Downstream");
 											option3.setAction(new Action() {
 
 												public void act() {
@@ -721,7 +488,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											});
 										}
 										if (text.getText().contains(events[7])) {
-											option1.setText("Fight Back");
+											option1.setText("Fill Up On/Drink Water");
 											option1.setAction(new Action() {
 
 												public void act() {
@@ -729,7 +496,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option2.setText("Run Away");
+											option2.setText("Swim Through It");
 											option2.setAction(new Action() {
 
 												public void act() {
@@ -737,7 +504,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option3.setText("Play Dead");
+											option3.setText("Walk Around It");
 											option3.setAction(new Action() {
 
 												public void act() {
@@ -747,7 +514,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											});
 										}
 										if (text.getText().contains(events[8])) {
-											option1.setText("Fight Back");
+											option1.setText("Loot Corpse");
 											option1.setAction(new Action() {
 
 												public void act() {
@@ -755,7 +522,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option2.setText("Run Away");
+											option2.setText("Ignore Corpse");
 											option2.setAction(new Action() {
 
 												public void act() {
@@ -763,7 +530,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option3.setText("Play Dead");
+											option3.setText("Call Out");
 											option3.setAction(new Action() {
 
 												public void act() {
@@ -773,7 +540,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											});
 										}
 										if (text.getText().contains(events[9])) {
-											option1.setText("Fight Back");
+											option1.setText("Go Into Cave And Rest");
 											option1.setAction(new Action() {
 
 												public void act() {
@@ -781,7 +548,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option2.setText("Run Away");
+											option2.setText("Ignore Cave");
 											option2.setAction(new Action() {
 
 												public void act() {
@@ -789,7 +556,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 												}
 
 											});
-											option3.setText("Play Dead");
+											option3.setText("Call Out");
 											option3.setAction(new Action() {
 
 												public void act() {
@@ -799,6 +566,9 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											});
 										}
 									}
+									remove(option1);
+									remove(option2);
+									remove(option3);
 									remove(defaultButton);
 								}
 							}

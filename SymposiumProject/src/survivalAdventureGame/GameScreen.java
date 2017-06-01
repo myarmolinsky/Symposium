@@ -10,6 +10,7 @@ import gui.components.TextLabel;
 import gui.components.Visible;
 import gui.screens.ClickableScreen;
 import survivalButtons.ChoiceButton;
+import survivalButtons.ProgressAction;
 
 public class GameScreen extends ClickableScreen implements Runnable {
 
@@ -47,36 +48,6 @@ public class GameScreen extends ClickableScreen implements Runnable {
 	private int turnCounter;
 	private Button defaultButton;
 	private TextLabel gameover;
-	// private Button bear1;
-	// private Button bear2;
-	// private Button bear3;
-	// private Button clearing1;
-	// private Button clearing2;
-	// private Button clearing3;
-	// private Button smoke1;
-	// private Button smoke2;
-	// private Button smoke3;
-	// private Button tracks1;
-	// private Button tracks2;
-	// private Button tracks3;
-	// private Button bee1;
-	// private Button bee2;
-	// private Button bee3;
-	// private Button trail1;
-	// private Button trail2;
-	// private Button trail3;
-	// private Button river1;
-	// private Button river2;
-	// private Button river3;
-	// private Button lake1;
-	// private Button lake2;
-	// private Button lake3;
-	// private Button corpse1;
-	// private Button corpse2;
-	// private Button corpse3;
-	// private Button cave1;
-	// private Button cave2;
-	// private Button cave3;
 	private ChoiceButton option1;
 	private ChoiceButton option2;
 	private ChoiceButton option3;
@@ -89,6 +60,22 @@ public class GameScreen extends ClickableScreen implements Runnable {
 
 	public void run() {
 
+	}
+
+	public int getHealth() {
+		return health;
+	}
+
+	public void setHealth(int health) {
+		this.health = health;
+	}
+
+	public int getProgress() {
+		return progress;
+	}
+
+	public void setProgress(int progress) {
+		this.progress = progress;
 	}
 
 	public void initAllObjects(ArrayList<Visible> viewObjects) {
@@ -302,15 +289,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option1.setAction(new Action() {
 
 												public void act() {
-													if (survivalKnifeTaken) {
-														health -= 25;
-													} else {
-														progress -= 5;
-														health -= 50;
-														if (progress < 0) {
-															progress = 0;
-														}
-													}
+													ProgressAction progAct = new ProgressAction(GameScreen,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});

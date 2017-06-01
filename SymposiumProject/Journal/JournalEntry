@@ -148,3 +148,8 @@ Started to set up the setting of buttons' texts and actions.
 My goals for today were to continue and finish setting up the choice buttons for the events that would occur throughout my game as I didn't finish them yesterday
 I finished naming all of the buttons, next I need to give all the buttons actions
 Got started on giving the buttons actions, going to have to continue and hopefully finish tomorrow
+
+6/1/17
+I want to complete the actions of the buttons today and then implement the progress and health bars.
+I showed Mr. Nockles my intentions for creating the action buttons and he showed me that I could make another class that would take in several parameters.
+This class should make my code easier.

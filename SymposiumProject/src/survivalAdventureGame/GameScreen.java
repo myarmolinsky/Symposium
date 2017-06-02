@@ -289,8 +289,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option1.setAction(new Action() {
 
 												public void act() {
-													ProgressAction progAct = new ProgressAction(GameScreen,
-															survivalKnifeTaken, friendTaken, 50, 0);
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, false, 5);
 												}
 
 											});
@@ -298,7 +298,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option2.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this, null,
+															null, 75, false, 0);
 												}
 
 											});
@@ -306,7 +307,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option3.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this, null,
+															null, 0, true, 10);
 												}
 
 											});
@@ -316,7 +318,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option1.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															medKitTaken, ragTaken, 50, false, 0);
 												}
 
 											});
@@ -324,7 +327,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option2.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this, null,
+															null, 0, true, 0);
 												}
 
 											});
@@ -332,7 +336,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option3.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															waterBottleTaken, friendTaken, 50, true, 0);
 												}
 
 											});
@@ -342,7 +347,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option1.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -350,7 +356,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option2.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -358,7 +365,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option3.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -368,7 +376,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option1.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -376,7 +385,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option2.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -384,7 +394,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option3.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -394,7 +405,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option1.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -402,7 +414,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option2.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -410,7 +423,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option3.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -420,7 +434,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option1.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -428,7 +443,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option2.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -436,7 +452,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option3.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -446,7 +463,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option1.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -454,7 +472,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option2.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -462,7 +481,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option3.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -472,7 +492,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option1.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -480,7 +501,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option2.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -488,7 +510,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option3.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -498,7 +521,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option1.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -506,7 +530,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option2.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -514,7 +539,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option3.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -524,7 +550,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option1.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -532,7 +559,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option2.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});
@@ -540,7 +568,8 @@ public class GameScreen extends ClickableScreen implements Runnable {
 											option3.setAction(new Action() {
 
 												public void act() {
-
+													ProgressAction progAct = new ProgressAction(GameScreen.this,
+															survivalKnifeTaken, friendTaken, 50, 0);
 												}
 
 											});

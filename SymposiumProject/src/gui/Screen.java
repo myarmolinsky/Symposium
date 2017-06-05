@@ -40,7 +40,9 @@ public abstract class Screen {
 		// }
 		for (int i = 0; i < viewObjects.size(); i++) {
 			Visible v = viewObjects.get(i);
-			g.drawImage(v.getImage(), v.getX(), v.getY(), null);
+			if(v != null){
+				g.drawImage(v.getImage(), v.getX(), v.getY(), null);
+			}
 		}
 	}
 

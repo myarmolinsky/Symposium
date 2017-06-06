@@ -58,320 +58,319 @@ public class GameScreen extends ClickableScreen implements Runnable {
 		super(width, height);
 	}
 
-	public void run() {
-		while (progress < 101) {
-			System.out.println(progress);
-			if (progress != tempCounter) {
-				String chosenEvent = chooseEvent();
-				text.setText(chosenEvent);
-				if (text.getText().contains(events[0])) {
-					option1.setText("Fight Back");
-					option1.setAction(new Action() {
+	public void nextDecision() {
+		if (progress < 100) {
+			String chosenEvent = chooseEvent();
+			text.setText(chosenEvent);
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, survivalKnifeTaken,
-									friendTaken, 50, false, 5);
-							tempCounter = progress + 1;
-						}
+			if (text.getText().contains(events[0])) {
+				option1.setText("Fight Back");
+				option1.setAction(new Action() {
 
-					});
-					option2.setText("Run Away");
-					option2.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, survivalKnifeTaken, friendTaken,
+								50, false, 5);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, null, null, 75, false, 0);
-							tempCounter = progress + 1;
-						}
+				});
+				option2.setText("Run Away");
+				option2.setAction(new Action() {
 
-					});
-					option3.setText("Play Dead");
-					option3.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, null, null, 75, false, 0);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, null, null, 0, true, 10);
-							tempCounter = progress + 1;
-						}
+				});
+				option3.setText("Play Dead");
+				option3.setAction(new Action() {
 
-					});
-				}
-				if (text.getText().contains(events[1])) {
-					option1.setText("Rest");
-					option1.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, null, null, 0, true, 10);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, medKitTaken, ragTaken, 50,
-									false, 0);
-							tempCounter = progress + 1;
-						}
+				});
+			} else if (text.getText().contains(events[1])) {
+				option1.setText("Rest");
+				option1.setAction(new Action() {
 
-					});
-					option2.setText("Keep Walking");
-					option2.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, medKitTaken, ragTaken, 50, false,
+								0);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, null, 0, true, 5);
-							tempCounter = progress + 1;
-						}
+				});
+				option2.setText("Keep Walking");
+				option2.setAction(new Action() {
 
-					});
-					option3.setText("Drink/Eat");
-					option3.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, null, 0, true, 5);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, waterBottleTaken, friendTaken,
-									50, true, 5);
-							tempCounter = progress + 1;
-						}
+				});
+				option3.setText("Drink/Eat");
+				option3.setAction(new Action() {
 
-					});
-				}
-				if (text.getText().contains(events[2])) {
-					option1.setText("Go To It");
-					option1.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, waterBottleTaken, friendTaken, 50,
+								true, 5);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, null, null, 0, true, 10);
-							tempCounter = progress + 1;
-						}
+				});
+			} else if (text.getText().contains(events[2])) {
+				option1.setText("Go To It");
+				option1.setAction(new Action() {
 
-					});
-					option2.setText("Go Away From It");
-					option2.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, null, null, 0, true, 10);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, null, 5, true, 5);
-							tempCounter = progress + 1;
-						}
+				});
+				option2.setText("Go Away From It");
+				option2.setAction(new Action() {
 
-					});
-					option3.setText("Keep Going");
-					option3.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, null, 5, true, 5);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, null, 5, true, 10);
-							tempCounter = progress + 1;
-						}
+				});
+				option3.setText("Keep Going");
+				option3.setAction(new Action() {
 
-					});
-				}
-				if (text.getText().contains(events[3])) {
-					option1.setText("Follow The Tracks");
-					option1.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, null, 5, true, 10);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, survivalKnifeTaken,
-									friendTaken, 25, false, 5);
-							tempCounter = progress + 1;
-						}
+				});
+			} else if (text.getText().contains(events[3])) {
+				option1.setText("Follow The Tracks");
+				option1.setAction(new Action() {
 
-					});
-					option2.setText("Go Away From Them");
-					option2.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, survivalKnifeTaken, friendTaken,
+								25, false, 5);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, null, null, 0, true, 5);
-							tempCounter = progress + 1;
-						}
+				});
+				option2.setText("Go Away From Them");
+				option2.setAction(new Action() {
 
-					});
-					option3.setText("Keep Going");
-					option3.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, null, null, 0, true, 5);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, null, 5, true, 10);
-							tempCounter = progress + 1;
-						}
+				});
+				option3.setText("Keep Going");
+				option3.setAction(new Action() {
 
-					});
-				}
-				if (text.getText().contains(events[4])) {
-					option1.setText("Stand Still");
-					option1.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, null, 5, true, 10);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, ragTaken, matchBoxTaken, 5,
-									false, 0);
-							tempCounter = progress + 1;
-						}
+				});
+			} else if (text.getText().contains(events[4])) {
+				option1.setText("Stand Still");
+				option1.setAction(new Action() {
 
-					});
-					option2.setText("Slowly Walk Away");
-					option2.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, ragTaken, matchBoxTaken, 5, false,
+								0);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, null, null, 0, true, 5);
-							tempCounter = progress + 1;
-						}
+				});
+				option2.setText("Slowly Walk Away");
+				option2.setAction(new Action() {
 
-					});
-					option3.setText("Run Away");
-					option3.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, null, null, 0, true, 5);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, friendTaken, null, 20, false,
-									5);
-							tempCounter = progress + 1;
-						}
+				});
+				option3.setText("Run Away");
+				option3.setAction(new Action() {
 
-					});
-				}
-				if (text.getText().contains(events[5])) {
-					option1.setText("Go Right");
-					option1.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, friendTaken, null, 20, false, 5);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, friendTaken, 10,
-									true, 10);
-							tempCounter = progress + 1;
-						}
+				});
+			} else if (text.getText().contains(events[5])) {
+				option1.setText("Go Right");
+				option1.setAction(new Action() {
 
-					});
-					option2.setText("Go Left");
-					option2.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, friendTaken, 10, true,
+								10);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, friendTaken, 10,
-									true, 10);
-							tempCounter = progress + 1;
-						}
+				});
+				option2.setText("Go Left");
+				option2.setAction(new Action() {
 
-					});
-					option3.setText("Keep Going");
-					option3.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, friendTaken, 10, true,
+								10);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, null, 10, true, 10);
-							tempCounter = progress + 1;
-						}
+				});
+				option3.setText("Keep Going");
+				option3.setAction(new Action() {
 
-					});
-				}
-				if (text.getText().contains(events[6])) {
-					option1.setText("Fill Up On/Drink Water");
-					option1.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, null, 10, true, 10);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, waterBottleTaken, null, 25,
-									true, 0);
-							tempCounter++;
-						}
+				});
+			} else if (text.getText().contains(events[6])) {
+				option1.setText("Fill Up On/Drink Water");
+				option1.setAction(new Action() {
 
-					});
-					option2.setText("Follow The River Upstream");
-					option2.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, waterBottleTaken, null, 25, true,
+								0);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, friendTaken, 5, true,
-									10);
-							tempCounter++;
-						}
+				});
+				option2.setText("Follow The River Upstream");
+				option2.setAction(new Action() {
 
-					});
-					option3.setText("Follow The River Downstream");
-					option3.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, friendTaken, 5, true,
+								10);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, friendTaken, 5, true,
-									10);
-							tempCounter++;
-						}
+				});
+				option3.setText("Follow The River Downstream");
+				option3.setAction(new Action() {
 
-					});
-				}
-				if (text.getText().contains(events[7])) {
-					option1.setText("Fill Up On/Drink Water");
-					option1.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, friendTaken, 5, true,
+								10);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, waterBottleTaken, null, 25,
-									true, 0);
-							tempCounter++;
-						}
+				});
+			} else if (text.getText().contains(events[7])) {
+				option1.setText("Fill Up On/Drink Water");
+				option1.setAction(new Action() {
 
-					});
-					option2.setText("Swim Through It");
-					option2.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, waterBottleTaken, null, 25, true,
+								0);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, survivalKnifeTaken,
-									25, false, 20);
-							tempCounter++;
-						}
+				});
+				option2.setText("Swim Through It");
+				option2.setAction(new Action() {
 
-					});
-					option3.setText("Walk Around It");
-					option3.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, survivalKnifeTaken, 25,
+								false, 20);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, waterBottleTaken, 10,
-									false, 5);
-							tempCounter++;
-						}
+				});
+				option3.setText("Walk Around It");
+				option3.setAction(new Action() {
 
-					});
-				}
-				if (text.getText().contains(events[8])) {
-					option1.setText("Loot Corpse");
-					option1.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, waterBottleTaken, 10,
+								false, 5);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, ragTaken, null, 10, false, 5);
-							tempCounter++;
-						}
+				});
+			} else if (text.getText().contains(events[8])) {
+				option1.setText("Loot Corpse");
+				option1.setAction(new Action() {
 
-					});
-					option2.setText("Ignore Corpse");
-					option2.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, ragTaken, null, 10, false, 5);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, ragTaken, null, 10, false, 0);
-							tempCounter++;
-						}
+				});
+				option2.setText("Ignore Corpse");
+				option2.setAction(new Action() {
 
-					});
-					option3.setText("Call Out");
-					option3.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, ragTaken, null, 10, false, 0);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, ragTaken, friendTaken, 10,
-									false, 5);
-							tempCounter++;
-						}
+				});
+				option3.setText("Call Out");
+				option3.setAction(new Action() {
 
-					});
-				}
-				if (text.getText().contains(events[9])) {
-					option1.setText("Go Into Cave And Rest");
-					option1.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, ragTaken, friendTaken, 10, false,
+								5);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, flashlightTaken, medKitTaken,
-									30, true, 0);
-							tempCounter++;
-						}
+				});
+			} else if (text.getText().contains(events[9])) {
+				option1.setText("Go Into Cave And Rest");
+				option1.setAction(new Action() {
 
-					});
-					option2.setText("Ignore Cave");
-					option2.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, flashlightTaken, medKitTaken, 30,
+								true, 0);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, null, 5, true, 5);
-							tempCounter++;
-						}
+				});
+				option2.setText("Ignore Cave");
+				option2.setAction(new Action() {
 
-					});
-					option3.setText("Call Out");
-					option3.setAction(new Action() {
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, gpsTaken, null, 5, true, 5);
+						nextDecision();
+					}
 
-						public void act() {
-							ProgressAction progAct = new ProgressAction(GameScreen.this, friendTaken, null, 5, true,
-									10);
-							tempCounter++;
-						}
+				});
+				option3.setText("Call Out");
+				option3.setAction(new Action() {
 
-					});
-				}
+					public void act() {
+						ProgressAction progAct = new ProgressAction(GameScreen.this, friendTaken, null, 5, true, 10);
+						nextDecision();
+					}
+
+				});
+			} else {
+				System.out.println("check");
 			}
+			System.out.println("" + text.getText());
+		}
+	}
+
+	public void run() {
+		addObject(option2);
+		addObject(option1);
+		addObject(option3);
+		if (progress != tempCounter) {
+			nextDecision();
 		}
 	}
 
@@ -594,7 +593,6 @@ public class GameScreen extends ClickableScreen implements Runnable {
 									addObject(option1);
 									addObject(option2);
 									addObject(option3);
-
 									Thread play = new Thread(GameScreen.this);
 									play.start();
 									remove(option1);

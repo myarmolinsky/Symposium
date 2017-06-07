@@ -45,9 +45,6 @@ public class GameScreen extends ClickableScreen implements Runnable {
 							// hive", "You walk onto a trail", "You walk up to a
 							// river", "You walk up to a lake", "You up to a
 							// bear bed", "You walk up to a cave"};
-	private int tempCounter = 1;
-	private Button defaultButton;
-	private TextLabel gameover;
 	private ChoiceButton option1;
 	private ChoiceButton option2;
 	private ChoiceButton option3;
@@ -59,9 +56,9 @@ public class GameScreen extends ClickableScreen implements Runnable {
 	}
 
 	public void nextDecision() {
-		if (progress < 100) {
+		if (progress < 100 && health != 0) {
 			String chosenEvent = chooseEvent();
-			text.setText(chosenEvent);
+			text.setText(chosenEvent + "Progress: " + progress + " | Health:" + health);
 
 			if (text.getText().contains(events[0])) {
 				option1.setText("Fight Back");
@@ -358,10 +355,18 @@ public class GameScreen extends ClickableScreen implements Runnable {
 					}
 
 				});
-			} else {
-				System.out.println("check");
 			}
-			System.out.println("" + text.getText());
+			System.out.println(progress + " " + health);
+		} else if (health <= 0) {
+			text.setText("Game over");
+			remove(option1);
+			remove(option2);
+			remove(option3);
+		} else if (progress > 99) {
+			text.setText("You Survived! Congrats!");
+			remove(option1);
+			remove(option2);
+			remove(option3);
 		}
 	}
 
@@ -369,9 +374,7 @@ public class GameScreen extends ClickableScreen implements Runnable {
 		addObject(option2);
 		addObject(option1);
 		addObject(option3);
-		if (progress != tempCounter) {
-			nextDecision();
-		}
+		nextDecision();
 	}
 
 	public int getHealth() {
@@ -578,28 +581,9 @@ public class GameScreen extends ClickableScreen implements Runnable {
 									remove(gps);
 									remove(friend);
 									remove(waterBottle);
-									defaultButton = new Button(500, 425, 150, 50, "Die", Color.RED, new Action() {
-
-										public void act() {
-											gameover = new TextLabel(400, 250, 100, 100, "Game Over");
-											viewObjects.add(gameover);
-											viewObjects.remove(text);
-											viewObjects.remove(defaultButton);
-										}
-
-									});
-									addObject(defaultButton);
 									remove(submitChosenItems);
-									addObject(option1);
-									addObject(option2);
-									addObject(option3);
 									Thread play = new Thread(GameScreen.this);
 									play.start();
-									remove(option1);
-									remove(option2);
-									remove(option3);
-									remove(defaultButton);
-									text.setText("You Survived! Congrats!");
 								}
 							}
 
@@ -689,14 +673,10 @@ public class GameScreen extends ClickableScreen implements Runnable {
 
 	public String chooseEvent() {
 		String chosenEvent = "";
-		if (progress < 51) {
-			chosenEvent = events[(int) (Math.random() * events.length)];
-			progress++;
-			chosenEvent += ", what do you do?";
-			return chosenEvent;
-		} else {
-			return "You made it to safety!";
-		}
+		chosenEvent = events[(int) (Math.random() * events.length)];
+		progress++;
+		chosenEvent += ", what do you do?";
+		return chosenEvent;
 	}
 
 }

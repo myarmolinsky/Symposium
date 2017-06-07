@@ -23,8 +23,8 @@ public class ProgressAction {
 		if(health){
 			if (this.tool1 && this.tool2) {
 				target.setHealth(target.getHealth() + healthChange);
-				if (target.getHealth() < 0) {
-					target.setHealth(0);
+				if (target.getHealth() > 100) {
+					target.setHealth(100);
 				}
 				target.setProgress(target.getProgress() + progressChange);
 				if (target.getProgress() < 0) {
@@ -32,8 +32,8 @@ public class ProgressAction {
 				}
 			} else if (tool1 != null && this.tool1 || tool2 != null && this.tool2) {
 				target.setHealth(target.getHealth() + healthChange / 2);
-				if (target.getHealth() < 0) {
-					target.setHealth(0);
+				if (target.getHealth() > 100) {
+					target.setHealth(100);
 				}
 				target.setProgress(target.getProgress() + progressChange / 2);
 				if (target.getProgress() < 0) {
@@ -41,8 +41,8 @@ public class ProgressAction {
 				}
 			} else {
 				target.setHealth(target.getHealth() + healthChange / 3);
-				if (target.getHealth() < 0) {
-					target.setHealth(0);
+				if (target.getHealth() > 100) {
+					target.setHealth(100);
 				}
 				target.setProgress(target.getProgress() + progressChange / 3);
 				if (target.getProgress() < 0) {
